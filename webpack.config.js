@@ -10,9 +10,22 @@ module.exports = {
   mode: "development",
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      "#components": path.resolve(
+        __dirname,
+        "src",
+        "public",
+        "js",
+        "components"
+      ),
+    },
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -30,8 +43,8 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"]
-      }
+        use: ["babel-loader", "eslint-loader"],
+      },
     ],
   },
   plugins: [

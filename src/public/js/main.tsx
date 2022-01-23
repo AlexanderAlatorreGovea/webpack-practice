@@ -8,4 +8,6 @@ const START_UP_BOILER_PLATE = (
   </React.StrictMode>
 );
 
-ReactDOM.render(START_UP_BOILER_PLATE, document.getElementById("root"));
+const ROOT = document.getElementById("root");
+
+ReactDOM.render(START_UP_BOILER_PLATE, ROOT);
